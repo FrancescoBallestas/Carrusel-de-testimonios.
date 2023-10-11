@@ -78,6 +78,7 @@ p{
 	gap: 25px;
 	width: 1000px;
 	overflow: hidden;
+	transition: transform 0.5s;
 }
 
 .testimonio{
