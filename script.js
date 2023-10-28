@@ -1,20 +1,29 @@
-const container = document.querySelector('.container-dos');
-const testimonios = document.querySelectorAll('.testimonio');
-const tiempoEspera = 3000;
-let posicionActual = 0;
+let slider = document.querySelector(".carrusel")
+let sliderIndividual = document.querySelectorAll(".testimonio")
+let contador = 1;
+let width = sliderIndividual[0].clientWidth;
+let intervalo = 4000;
 
-function moverCarrusel() {
-    testimonios[posicionActual].style.display = 'none';
+window.addEventListener("resize", function(){
+    width = sliderIndividual[0].clientWidth;
+})
 
-    posicionActual = (posicionActual + 1) % testimonios.length;
+setInterval(function(){
+    slides();
+},intervalo);
 
-    testimonios[posicionActual].style.display = 'inline-block';
+
+
+function slides(){
+    slider.style.transform = "translate("+(-980*contador)+"px)";
+    slider.style.transition = "transform 1s";
+    contador++;
+
+    if(contador == sliderIndividual.length){
+        setTimeout(function(){
+            slider.style.transform = "translate(0px)";
+            slider.style.transition = "transform 0s";
+            contador=1;
+        },1500)
+    }
 }
-
-function iniciarCarrusel() {
-    testimonios[0].style.display = 'inline-block'; // Mostrar el primer testimonio inicialmente
-
-    setInterval(moverCarrusel, tiempoEspera);
-}
-
-iniciarCarrusel();

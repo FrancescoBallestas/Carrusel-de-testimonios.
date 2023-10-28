@@ -39,7 +39,7 @@ main {
 
 .container-uno {
 	margin-top: 250px;
-	height: 600px;
+	height: 500px;
 	display: flex;
 	text-align: center;
 	flex-direction: column;
@@ -69,14 +69,14 @@ p{
 }
 
 .container-dos {
-	margin-top: 50px;
 	height: 450px;
 	display: flex;
 	text-align: center;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 25px;
-	width: 1000px;
+	width: 950px;
 	overflow: hidden;
 }
 
@@ -93,9 +93,22 @@ p{
 	padding-top: 20px;
 	font-style: italic;
 	font-weight: lighter;
+	width: 800px;
 }
 
 h3 {
 	font-weight: lighter;
 }
+
+.carrusel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 950px;
+	height: 100%;
+	margin-bottom: 200px;
+}
+
 
